@@ -1,0 +1,35 @@
+
+<span id="searchResults">Showing Results of Search:</span><br><br>
+<div 
+  class="center"
+  style="text-align:right"
+    *ngIf = "loadingScreen">
+    <p>Loading</p>
+    <div 
+    class="loader-wrapper"
+    class="lds-default center">
+      <div ></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+</div>
+<!-- code for initiated contacts is going here -->
+<div *ngIf ="contactsInitiated">
+  <app-contact
+    *ngFor="let contact of contacts; index as i; let l = count"
+    [contactData]=contact
+    [arraySpot]=i
+    [arrayLength]=contacts.length>
+  </app-contact>
+
+</div>

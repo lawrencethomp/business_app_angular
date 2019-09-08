@@ -1,0 +1,21 @@
+<div>
+<!-- make the name just be big here -->
+<div id="contactInfo">
+    <div id="firstLine">
+      Contact Info For 
+        <span id="detailName">
+          {{  contactDetail.firstName }} {{contactDetail.lastName}} 
+        </span><br>
+    </div>
+    Email: {{contactDetail.email}}<br>
+    Phone Number: {{contactDetail.phoneNumber}} <br>
+    Address: {{contactDetail.address}} <br>
+    Date Added: {{contactDetail.dateAdded}}<br>
+</div>
+    <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+  <button>Return to Contacts</button> 
+  <button>Delete Contact</button> 
+  <button>Edit Contact</button>
+</div>

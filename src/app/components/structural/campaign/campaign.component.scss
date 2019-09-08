@@ -1,0 +1,58 @@
+agm-map {
+    height: 300px;
+  }
+
+#currentInfo {
+  font-size: 2vw;
+  color: black;
+}
+
+
+
+.updateNotes {
+  margin-bottom: 0em;
+  width: 100%;
+}
+
+.buttonsWrapper {
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.descHeader {
+  color: black;
+  font-weight: 900;
+
+}
+
+#preferences {
+  color: black;
+  font-weight: 900;
+}
+
+#preferenceTable {
+  margin-left: 1em;
+}
+
+.addToNotes {
+}
+
+.descText {
+  color: black;
+  font-size: 1.25vw;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.campaignButton {
+    
+  /* border: none;  */
+  border: 2px solid grey;
+  border-radius: 5px;
+  background-color: burlywood;
+  font-weight: bolder;
+  font-size: 18px;
+  transition: transform .05s;
+  box-shadow: 2.5px 5px;
+}

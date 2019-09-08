@@ -1,0 +1,113 @@
+<!-- Should be a google map created by entering a bunch of points in -->
+
+<div>
+<div id="currentInfo">
+  <p>Special Campaign for Women</p>
+  <p>Contact 1 of 12</p>
+</div>
+<agm-map [latitude]="43.008663" [longitude]="-71.454391">
+  <agm-marker
+      *ngFor="let data of campaignContacts; let i = index"
+      [latitude]="data.fLat"
+      [longitude]="data.fLng">
+      <agm-info-window>
+          <strong>{{data.firstName}} {{data.lastName}}</strong> <br>
+          <strong>{{data.address}}</strong> <br>
+          <strong>{{data.phonenumber}}</strong> <br>
+          <strong>{{data.email}}</strong> <br>
+        </agm-info-window>
+    </agm-marker>
+</agm-map>
+<div> <br>
+  <p id="visiting" class="descHeader">
+  You are currently visiting: <br>
+  </p>
+  <p id="targetContact" class="descText">
+    {{ currentContact.firstName }} {{ currentContact.lastName }} <br>
+    {{ currentContact.phonenumber }} <br>
+    {{ currentContact.address }} {{ currentContact.state }} {{ currentContact.zipcode }}
+
+</p>
+</div>
+<!-- Mock notes -->
+<div>
+<h3 id="notesHeader" class="descHeader">Notes for {{currentContact.firstName}} {{currentContact.lastName}}: </h3>
+<div id="previousNotes" class="descText">
+  <p>10/01/18: We've found a good contact in Beth.</p>
+  <p>11/15/18: Bethany goes by Beth.</p>
+  <p> 12/03/18: Could not reach contact.</p>
+</div>
+<!-- Display notes here  -->
+<div *ngIf="currentContact.notes > 0">
+Notes for {{currentContact.firstName}} {{currentContact.lastName}}
+<p *ngFor="let note of currentContact.notes">
+  {{note}}
+</p>
+</div>
+<span id="preferences" class="descHeader">Show Preferences:</span> <br>
+<div id="preferenceTable" class="descText">
+  <form>
+      Support the Affordable Care Act:
+      <select name="ACA">
+        <option value="stronglySupport">Strongly Support</option>
+        <option value="partiallySupport">Partially Support</option>
+        <option value = "neutral">Neutral</option>
+        <option value = "lightOppose">Partially Oppose</option>
+        <object value = "stronglyOppose">Strongly Oppose</object>
+      </select> <br>
+    Voted in the Midterms or Election: 
+      yes <input type="radio" name="voted" value="yes"> 
+      no <input type="radio" name="voted" value="no">  <br>
+    Political Views: <select name="politicalViews"> <br> 
+      <option value="left">Leftist</option>
+      <option value="socialDemocrat">Social Democrat</option>
+      <option value = "liberal">Liberal</option>
+      <option value = "centrist">Centrist</option>
+      <object value = "conservative">Conservative</object>
+      <object value = "libertarian">Libertarian</object>
+    </select> <br>
+    Support Medicare For All:   <select name="M4A"> <br> 
+      <option value="stronglySupport">Strongly Support</option>
+      <option value="partiallySupport">Partially Support</option>
+      <option value = "neutral">Neutral</option>
+      <option value = "lightOppose">Partially Oppose</option>
+      <object value = "stronglyOppose">Strongly Oppose</object>
+    </select><br>
+    Income Level: <select name="income"> <br> 
+      <option value="struggling">Struggling</option>
+      <option value="treadingWater">Treading Water</option>
+      <option value = "thriving">Thriving</option>
+      <option value = "expanding">Expanding</option>
+      <object value = "noanswer">No Answer</object>
+    </select>
+  </form><br>
+</div>
+  <textarea class="updateNotes" placeholder="Add to notes..."></textarea><br>
+  <button
+    class="campaignButton addToNotes">Update Notes</button> <br> <br>
+<div class="buttonsWrapper">
+  <button 
+    class="campaignButton"
+    (click)="switchContact('backward')">Previous Contact</button>
+  <button
+    class="campaignButton">Return to Contacts</button>
+  <button 
+    class="campaignButton"
+    (click)="switchContact('forward')">Next Contact</button>
+</div>
+</div>
+<br>
+
+
+
+<!-- Listing of all the points in order that the
+person is going to go to. -->
+<div *ngIf="campaignContacts?.length > 0" >
+You are visiting the following people.
+<li *ngFor="let user of campaignContacts">
+  <a class= "level-item" [routerLink]="['/contactdetail', user._id]">
+    <button class = "contactButton" >{{user.firstName}}, {{user.lastName}}</button>
+  </a>
+
+</li>
+</div>

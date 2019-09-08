@@ -1,0 +1,108 @@
+
+<form
+    (ngSubmit)="searchDB(searchForm.form)"
+    #searchForm="ngForm">
+<input
+    ngModel
+    name= "firstName"
+    type="text"
+    placeholder="First Name..."
+    class="groove">
+<input
+    ngModel
+    name ="lastName"
+    type="text"
+    placeholder="Last Name..."
+    class="groove"> <br>
+
+<input
+    ngModel
+    name ="address"
+    type="text"
+    placeholder="Address"
+    class="groove">
+
+<input
+    ngModel
+    name ="phoneNumber"
+    type="text"
+    placeholder="Phone Number"
+    class="groove">
+
+<input
+    ngModel
+    name ="zipCode"
+    type="text"
+    placeholder="Zipcode"
+    class="groove"><br>
+
+    <h2>Preferences</h2>
+    Voted in the Midterms: <input type="radio"
+                                #voted
+                                ngModel
+                                name="voted"
+                                value = "yes"> Yes
+                            <input 
+                                ngModel
+                                type="radio"
+                                name="voted"
+                                value = "no"> No <br>
+    Political Views: <select
+                        ngModel
+                        #politicalView
+                        name="politicalView"
+                        >
+                        <option value="left">Leftist</option>
+                        <option value="socialDemocrat">Social Democrat</option>
+                        <option value="liberal">Liberal</option>
+                        <option value="centrist">Centrist</option>
+                        <option value="conservative">Conservative</option>
+                        <option value="libertarian">Libertarian</option>
+                    </select> <br>
+    Supports Medicare for All: <select
+                                ngModel
+                                #supportM4A
+                                name="supportM4A">
+                                    <option value="stronglySupport">Strongly Support</option>
+                                    <option value="partiallySupport">Partially Support</option>
+                                    <option value="neutral">Neutrally Support</option>
+                                    <option value="lightOppose">Partially Oppose</option>
+                                    <option value="stronglyOppose">Strongly Oppose</option>
+                              </select> <br>
+    Supports Affordable Care Act: <select
+        ngModel
+        #supportACA
+        name="supportACA">
+            <option value="stronglySupport">Strongly Support</option>
+            <option value="partiallySupport">Partially Support</option>
+            <option value="neutral">Neutrally Support</option>
+            <option value="lightOppose">Partially Oppose</option>
+            <option value="stronglyOppose">Strongly Oppose</option>
+    </select> <br>
+    Income Level: <select
+                        ngModel
+                        #incomeLevel
+                        name="incomeLevel">
+                        <option value="struggling">Struggling</option>
+                        <option value="treadingWater">Treading Water</option>
+                        <option value="thriving">Thriving</option>
+                        <option value="expanding">Expanding</option>
+                        <option value="wellOff">Well Off</option>
+                        <option value="noanswer">No Answer</option>
+                    </select> <br>
+
+
+<button>
+<i class="fa fa-search" aria-hidden="true"></i>
+</button> <br>
+
+</form>
+
+<div ng-if="searchCompleted == true">
+    <app-contact
+        *ngFor="let contact of searchResults; index as i; let l = count"
+        [contactData]=contact
+        [arraySpot]=i
+        [arrayLength]=searchResults.length>
+    </app-contact>
+</div>

@@ -1,0 +1,21 @@
+<app-contact-list></app-contact-list>
+<div id="buttonField">
+<button id="generateButton" class="turfButton" (click)="getContacts()" >Generate Turf</button>
+<button id="generateButton"
+    class="contactButton"
+    routerLink="/createcontact" 
+    routerLinkActive="active" >Add Contact</button>
+<button id="generateButton"
+    class= "mapButton"
+    routerLink="/campaign"
+    routerLinkActive="active"
+    (click)="sendMapData()">
+    Build Map
+</button> <br>
+<button id="generateButton"
+    class="previousButton"
+    (click)="paginateMongo('backward')">Previous</button>
+<button id="generateButton"
+    class="nextButton"
+    (click)="paginateMongo('forward')">Next</button>
+</div>

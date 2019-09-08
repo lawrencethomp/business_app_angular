@@ -1,0 +1,81 @@
+table{
+    font-size: 1vw;
+    margin-left: 5%;
+    padding: 0%;
+    border-collapse: collapse;
+    /* border: 1px solid black; */
+    width: 50%;
+    font-weight: 900;
+    color: black;
+    text-shadow: 2px 2px white;
+}
+
+.contactHeader {
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
+    font-size: 2vw;
+    text-shadow: 2px 2px wheat;
+    
+}
+.contactNum{
+    font-weight: bold;
+}
+// .contactClass tr:nth-child(odd) {
+//     background-color: rgb(173, 210, 211);
+// }
+.contactClass tr {
+    // background-color: rgb(243, 237, 228);
+}
+
+.confirmBox {
+    /* display: inline-block;
+    float: right; */
+    vertical-align:top;
+    display: inline-block;
+}
+
+
+.contactMenuFooter {
+    background-color: #9A3334;
+}
+
+.contactTop {
+    background-color: #9A3334;
+}
+
+.contactButton {
+    font-size: 1vw;
+    border: none;
+    background: none;
+
+    color: black;
+    font-weight: bold;
+    transition: transform .2s;
+    text-shadow: 2px black;
+}
+
+.contactButton:hover{
+    transform: scale(1.1);
+    color: grey;
+    font-weight: bolder;
+}
+
+.contactFrame {
+    display: inline-block;
+    background-color: rgb(243, 237, 228);
+    transition: transform .1s;
+    color: black;
+    text-shadow: .25px .25px red;
+    float: left;
+    display: inline-block;
+}
+
+
+.mainFrame {
+    overflow: hidden;
+}
+
+.contactFrame:hover{
+    transform: scale(1.01)
+}

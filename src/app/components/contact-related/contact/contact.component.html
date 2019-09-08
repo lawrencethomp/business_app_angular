@@ -1,0 +1,58 @@
+<div class="card">
+      <div *ngIf="living" class="contactFrame">
+          <header class="card-header">
+          <span class="contactHeader">
+            Contact <span class="contactNum">
+              <!-- {{ arraySpot + 1 }} -->
+            </span> of
+          <span class="contactNum">
+            <!-- {{arrayLength}} -->
+          </span>.</span>
+          </header>
+          <div class="card-content">
+          <div class="">
+          <table id="open-modal" class="contactClass">
+            <tr>
+              <td>{{campaign}}</td>
+            </tr>
+            <tr>
+              <td>Name: </td>
+
+              <td> {{ contactData.firstName }} {{ contactData.lastName }} </td>
+            </tr>
+            <tr>
+                <td>Address: </td>
+              <td>{{ contactData.address }} </td>
+            </tr>
+            <!-- <tr *ngIf="contactData.phonenumber"> -->
+              <tr>
+                <td>Phone Number: </td>
+                <td>{{ contactData.phonenumber }} </td>
+            </tr>
+            <!-- <tr *ngIf="contactData.email"> -->
+              <tr>
+                <td>Email: </td>
+                <td>{{contactData.email}} </td>
+            </tr>
+          </table>
+          </div>
+        </div>
+        <footer class="card-footer">  
+
+        <a class= "level-item" [routerLink]= "['/editcontact', contactData._id]"><button class = "contactButton" (click)="editContact()">Edit</button></a>
+        <button class = "contactButton" (click)="deleteContact(contactData._id)">Delete</button>
+        <a class= "level-item" [routerLink]="['/contactdetail', contactData._id]">
+            <button class = "contactButton" >More Info</button>
+        </a>
+        <a class= "level-item ">
+        <button *ngIf="!addedToCampaign; else elseBlock" 
+        class = "contactButton"
+        (click) = "changeStatus()">Add to campaign
+        
+        
+        </button>
+        <ng-template #elseBlock> <button class="contactButton" (click)= "changeStatus()"> Remove from Campaign</button></ng-template>
+        </a>
+            </footer>
+      </div>
+</div>

@@ -1,0 +1,101 @@
+
+<h2 id="createContact">Create a contact</h2>
+<form
+  (ngSubmit)="addContact(createContactForm.form);"
+  #createContactForm="ngForm">
+
+First Name: <input type="text"
+    ngModel
+    name="firstName"
+    > <br>
+
+Last Name: <input type="text"
+    ngModel
+    name="lastName"
+    > <br>
+  
+Address:  <input type="text"
+    ngModel
+    name="address"
+    > <br>
+City: <input 
+    type="text"
+    ngModel
+    name="city"
+    > <br>
+State: <input type="text"
+    ngModel
+    name="state"> <br>
+Email:   <input type="text"
+    ngModel
+    name="email"> <br>
+
+Phone Number: <input type="text"
+    ngModel
+    name="phonenumber"> <br>
+
+Preferred Pronoun: <input type="text"
+    ngModel
+    name="pronoun"> <br>
+
+AdditionalNotes: <input type="text"
+    ngModel
+    name="additionalNotes"> <br>
+    
+Preferred Name: <input type="text"
+    ngModel
+    name="preferredName"> <br>   
+<h2 id="createContact">Preferences</h2>
+Voted in the Midterms: <input type="radio"
+                            ngModel
+                            name="voted"
+                            value = "yes"> Yes
+                        <input 
+                            ngModel
+                            type="radio"
+                            name="voted"
+                            value = "no"> No <br>
+Political Views: <select
+                    ngModel
+                    name="politicalView"
+                    >
+                    <option value="left">Leftist</option>
+                    <option value="socialDemocrat">Social Democrat</option>
+                    <option value="liberal">Liberal</option>
+                    <option value="centrist">Centrist</option>
+                    <option value="conservative">Conservative</option>
+                    <option value="libertarian">Libertarian</option>
+                </select> <br>
+Supports Medicare for All: <select
+                            ngModel
+                            name="supportM4A">
+                                <option value="stronglySupport">Strongly Support</option>
+                                <option value="partiallySupport">Partially Support</option>
+                                <option value="neutral">Neutrally Support</option>
+                                <option value="lightOppose">Partially Oppose</option>
+                                <option value="stronglyOppose">Strongly Oppose</option>
+                          </select> <br>
+Supports Affordable Care Act: <select
+    ngModel
+    name="supportACA">
+        <option value="stronglySupport">Strongly Support</option>
+        <option value="partiallySupport">Partially Support</option>
+        <option value="neutral">Neutrally Support</option>
+        <option value="lightOppose">Partially Oppose</option>
+        <option value="stronglyOppose">Strongly Oppose</option>
+</select> <br>
+Income Level: <select
+                    ngModel
+                    name="incomeLevel">
+                    <option value="struggling">Struggling</option>
+                    <option value="treadingWater">Treading Water</option>
+                    <option value="thriving">Thriving</option>
+                    <option value="expanding">Expanding</option>
+                    <option value="wellOff">Well Off</option>
+                    <option value="noanswer">No Answer</option>
+                </select> <br>
+
+<button>Submit</button>
+
+</form>
+

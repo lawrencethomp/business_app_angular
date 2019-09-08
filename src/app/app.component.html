@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link href="https://afeld.github.io/emoji-css/emoji.css"
+            rel="stylesheet">
+
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+
+        <section class= "section">
+            <div class= "container">
+                    <div id="nav_div">
+                            <nav role='navigation'>
+                                <a
+                                    class = "linkitem "
+                                    id="turf_link"
+                                    routerLink="/turf"
+                                    routerLinkActive="active"><span class="zoom">Generate Turf
+                                            <i class="em em-athletic_shoe"></i>
+                                    </span>
+                                </a>
+                            </nav>
+            </div>
+                <section class="hero">
+                    <h1 id="banner"
+                        class="wordart italic-outline title">
+                        <span class="text">Business App</span>
+                    </h1>
+                </section>
+            <div id="mainFrame">
+                <router-outlet></router-outlet>
+
+            </div>
+
+            </div>
+        </section>
+    </body>
+</html>

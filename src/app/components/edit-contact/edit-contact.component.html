@@ -1,0 +1,46 @@
+<form 
+    (ngSubmit)="editContact(editContactForm.form);"
+    #editContactForm="ngForm">
+
+   First Name: <input type="text"
+        name="firstName"
+        value="{{ contact.firstName }}"
+        ngModel
+        >  <br>
+    Last Name: <input type="text"
+        name="lastName"
+        value="{{ contact.lastName }}"
+        ngModel
+        > <br>
+    Address: <input type="text"
+    value="{{ contact.address }}"
+        name="address"
+        ngModel> <br>
+    Email: <input type="text"
+        name="email"
+        value="{{ contact.email }}"
+        ngModel
+        > <br>
+    Phone Number: <input type="text"
+        name="phonenumber"
+        value="{{ contact.phonenumber }}"
+        ngModel
+        > <br>
+    Preferred Name: <input type="text"
+        name="preferredName"
+        value="{{ contact.preferredName }}"
+        ngModel
+        > <br>
+    Additional Notes: <input type="text"
+        name="additionalNotes"
+        value="{{ contact.additionalNotes }}"
+        ngModel
+        > <br>    
+    Preferred Pronoun: <input type="text"
+    name="pronoun"
+    value="{{ contact.pronoun }}" 
+    ngModel
+    > <br>
+    
+    <button>Edit Contact</button>
+</form>
