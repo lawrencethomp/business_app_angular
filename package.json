@@ -55,7 +55,7 @@
     "save": "^2.3.2",
     "svelte-google-maps-embed": "^0.1.1",
     "tls": "0.0.1",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
